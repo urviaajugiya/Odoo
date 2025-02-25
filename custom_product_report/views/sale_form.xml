@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_company" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="select" placeholder="Enter custom value"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="comment" placeholder="Comment"/>
+            </xpath>
+        </field>
+    </record>   
+
+    <record id="action_sale" model="ir.actions.act_window">
+        <field name="name">Sale Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_company_sale" name="Sale Order" parent='menu_report' action='action_sale'/>
+</odoo>

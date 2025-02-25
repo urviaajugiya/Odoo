@@ -1,0 +1,337 @@
+<odoo>
+    <template id="product_report_template" >
+        <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+        <t t-foreach="docs" t-as="report">
+            <div class="page" >
+                <table class="table" style="padding-top: 0px; border-style:none; border-color: transparent; ">
+                <tr>
+                    <td style="width:35%;">
+                        <p>Sold to<br/></p>
+                        <p><span style="font-weight: bold;">Customer Name:<t t-esc="report.partner_id.name"/></span><br/></p>
+                        <p>Street Address:<t t-esc="report.st_add"/><br/></p>
+                        <p>City,State/Province,Zip/Post code:<t t-esc="report.post_code"/><br/></p>
+                        <p>Country:<t t-esc="report.country.name"/><br/></p>
+                        <p><span style="font-weight: bold;">Attention to:<t t-esc="report.partner_id.name"/></span><br/></p>
+                    </td>
+
+                    <td style="width:35%;">
+                        <p>Ship to<br/></p>
+                        <p><span style="font-weight: bold;">Ship to Name:<t t-esc="report.partner_id.name"/></span><br/></p>
+                        <p>Ship to Street Address:<t t-esc="report.st_add"/><br/></p>
+                        <p>City,State/Province,Zip/Post code:<t t-esc="report.post_code"/><br/></p>
+                        <p>Country:<t t-esc="report.country.name"/><br/></p>
+                        <p><span style="font-weight: bold;">Attention to:<t t-esc="report.partner_id.name"/></span><br/></p>
+                    </td>
+                    
+                    <td style="width:30%;">
+                        <p style="font-size: 25px; color: red;">TAX INVOICE</p>
+                        <p>Invoice No:<t t-esc="report.invoice_no"/><br/></p>                   
+                        <p>Date:<t t-esc="report.date"/> <br/></p>
+                        <p>Your Ref:<t t-esc="report.your_ref"/> <br/></p>
+                        <p>Our ref: <t t-esc="report.our_ref"/><br/></p>
+                        <p>Credit Term:<t t-esc="report.credit_term"/><br/></p>
+                    </td>
+                </tr>
+        
+            </table>
+            </div> 
+        </t> 
+            <div class="page" style="padding-top: 10px; text-align: centre; margin-bottom:0">
+                <table class="table" >
+                <thead>
+                <tr>
+                        <th><span style="font-weight: bold;">Product ID</span></th>
+                        <th><span style="font-weight: bold;">Description</span></th>
+                        <th><span style="font-weight: bold;">Quantity</span></th>
+                        <!-- <th><span style="font-weight: bold;">UM</span></th> -->
+                        <th><span style="font-weight: bold;">Unit Price</span></th>
+                        <th><span style="font-weight: bold;">Amount</span></th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                <t t-foreach="report.product_tmpl_id" t-as="line">
+                    <tr>
+                        <td><t t-esc="line.order_id.name"/></td>
+                        <td><t t-esc="line.name"/></td>
+                        <td><t t-esc="line.product_uom_qty"/></td>
+                        <!-- <td><t t-esc="line.um"/></td> -->
+                        <td><t t-esc="line.price_unit"/></td>
+                        <td><t t-esc="line.price_subtotal"/></td>
+                        
+                        
+                    </tr>
+                </t>
+                   
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                   
+                </tbody>
+                </table> 
+            </div>
+                <!-- <style>
+                    
+                        
+                    .tbl1 {
+                    display: flex;
+                    justify-content: space-between;
+                    }
+
+                    .tbl1 table {
+                    margin-left:auto;
+                    margin-right:0;
+                    margin-bottom: 0%;
+                    width:36%;
+                    grid-template-columns:
+                    top:0px
+                    }
+
+                    .tbl1 td, th{
+                        width: 50px;
+                    }
+
+                    .table2{display: flex;
+                    justify-content: space-between; 
+                    } 
+
+                    .table2 table {
+                    margin-top: 0px;
+                    margin-left:0;
+                    }
+
+                </style> -->
+                <!-- <style>
+    .table-container {
+      width: 100%; /* Full container width */
+    }
+
+    table {
+      width: 45%; /* Each table takes up 45% of the container's width */
+      margin-right: 10%; /* Adds space between tables */ /* Border around the tables */
+      padding: 10px;
+    }
+
+    .page{
+        border:none;
+    } -->
+
+
+    
+  <!-- </style> -->
+                <div class="page">
+                <table style="width:100%; border-style:none; border-color: transparent;" >
+                <thead>
+                <tr>
+                    
+                    <th style="width:80%; margin-right: 30%;">comment</th>
+                    <th style="width:20%"></th>
+                </tr>
+                <tr>
+                    <td><t t-esc="report.comment"/><br/><br/><br/></td>
+                    <td>
+                        Sub Total:<t t-esc="report.subtotal"/><br/>
+                        GST:<t t-esc="report.gst_amount"/><br/>
+                        PST:<t t-esc="report.pst_amount"/><br/>
+                        Invoice Total:<t t-esc="report.invoice_total"/><br/>
+                        <!-- Freigh:<br/>
+                        Amount Paid:<br/> -->
+                        Balance Duo:<t t-esc="report.invoice_total"/><br/>
+                    </td>
+                </tr>
+                </thead>
+                </table>
+                
+                <!-- <tr>
+                        
+                </tr>
+                <tr>    
+                        <th>Sub Total</th>
+                        <td>$3,600.00</td>
+                </tr>
+                <tr>
+                        <th>GST</th>
+                        <td>$360.00</td>
+                </tr>
+                <tr>
+                        <th>PST</th>
+                        <td>$180.00</td>
+                </tr>
+                <tr>
+                        <th>Invoice Total</th>
+                        <td>$4,140.00</td>
+                </tr>
+                <tr>
+                        <th>Freigh</th>
+                        <td></td>
+                </tr>
+                <tr>
+                        <th>Amount Paid</th>
+                        <td></td>
+                </tr>
+                <tr>
+                        <th>Balance Duo</th>
+                        <td>$4,140.00</td>
+                </tr>
+                <tr>
+                        
+                </tr>
+                </thead> -->
+                
+                <!-- <table style="width:10% margin-left:auto; margin-top:0;" >
+                <thead>
+                <tr>
+                    <th>
+                            <span style="font-weight: bold; font-size: 15px; text-align: left">Comment</span><br/><br/><br/><br/><br/><br/>
+                    </th>
+                </tr>
+                </thead>
+                </table> -->
+                <!-- </div> -->
+                
+            </div>
+            <!-- <div class="table2">
+                 <table style="width: 62%; margin-top: 0px;">
+                    <th class="table2">
+                            <span style="font-weight: bold; font-size: 15px; text-align: left">Comment</span><br/><br/><br/><br/><br/><br/>
+                        </th>
+                </table>
+            </div>  -->
+            <xpath expr="//div[@class='footer']" position="after">
+            <div class="footer" style="text-align: left; padding-top: 10px; font-size: 12px;">
+                <table style="width: 100%; border-style:none; border-color: transparent;">  
+                    <tr>
+                        <td class="text-left" style="border: none;" >
+                            <span style="font-weight: bold; font-size: 20px;">Tearms and Condition</span><br/>
+                            • Terms and conditions agreements inform users about the rules and expectations for using a website or app.<br/>
+                            • These agreements are also where you can establish and communicate your governing laws and dispute resolutions.<br/>
+                            • It may hold up in court so long as long as your rules fall within applicable laws and users read and agreed to it.<br/>
+                            Account Name:<br/>
+                            Account No:<br/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </xpath>
+        </t>
+        </t>
+    </template>
+</odoo>

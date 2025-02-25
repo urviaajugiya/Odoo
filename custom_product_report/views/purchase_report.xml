@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_company" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+         <!-- sale.view_order_line_form -->
+        <field name="arch" type="xml">    
+            <!-- <xpath expr="//field[@name='product_uom_qty']" position="before">
+                    <field name="x_custom_field"/>
+            </xpath> -->
+            
+            <xpath expr="//field[@name='o.date_order']" position="after">
+                    <!-- <tr>
+                        <td><strong>Set:</strong></td>
+                        <td><span t-field="x_custom_field"/></td>
+                    </tr> -->
+                    <field name="o.x_custom_field"></field>
+                </xpath>
+        </field>
+    </record>
+
+    <record id="action_sale_order_line" model="ir.actions.act_window">
+        <field name="name">Purchase Order </field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_company_sale" name="Sale Order Line" parent='menu_report' action='action_sale_order_line'/>
+</odoo>

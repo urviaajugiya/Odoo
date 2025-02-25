@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="view_partner" model="ir.ui.view">
+        <field name="name">partner.info,form</field>
+        <field name="model">partner.info</field>
+        <!-- <field name="inherit_id" ref="base.view_partner_form"/> -->
+        <field name="arch" type="xml">
+            <field name="name"></field>
+            <field name="partner_id"/>
+            <!-- <field name="x_custom_field" position="after"/> -->
+        </field>
+    </record>
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">partner.info.tree</field>
+        <field name="model">partner.info</field>
+        <field name="arch" type="xml">
+            <tree string="Task">
+                <field name="partner_id"/>               
+                <field name="x_custom_field"/>    
+            </tree>
+        </field>
+    </record>
+    <record id="action_partner" model="ir.actions.act_window">
+        <field name="name">Partner Info</field>
+        <field name="res_model">partner.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_company" name="Partner Info" parent='menu_report' action='action_partner'/>
+</odoo>

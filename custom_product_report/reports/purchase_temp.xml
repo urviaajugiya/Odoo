@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_order_line_template" inherit_id="purchase.report_purchaseorder_document">
+            <xpath expr="//field[@t-if='o.date_order']" position="after">
+                    <strong>Custom Field:</strong>
+                        <p t-field="o.x_custom_field" class="m-0"/>
+            </xpath>
+    </template>
+</odoo>

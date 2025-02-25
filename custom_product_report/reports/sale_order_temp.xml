@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_order_template" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@t-field='doc.partner_id']" position="before">
+                <div>                   
+                    <strong>Select Order: <span t-esc="doc.select" name="Select Order:"/></strong>                
+                </div>
+            </xpath>
+            <xpath expr="//div[@t-field='doc.partner_id']" position="after">
+                <div>                   
+                    <strong>Comment: <span t-esc="doc.comment" name="Comment:"/></strong>                
+                </div>
+            </xpath>
+            <!-- <xpath expr="//div/span[@name='order_note']" position="before">
+                <div>
+                    <span t-field="doc.select.note" name="select"/>
+                </div>
+            </xpath> -->
+    </template>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+<record id="action_report_custom" model="ir.actions.report">
+       <field name="name">Custom Product Report</field>
+       <field name="model">company.info</field>
+       <field name="report_type">qweb-pdf</field>
+       <field name="report_name">custom_product_report.product_report_template</field>
+       <field name="report_file">custom_product_report.product_report_template</field>
+       <field name="print_report_name">'Report - %s' % (object.name)</field>
+       <field name="binding_model_id" ref="model_company_info"/>
+       <field name="binding_type">report</field>
+   </record>
+</odoo>

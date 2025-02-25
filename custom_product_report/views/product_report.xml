@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company" model="ir.ui.view">
+        <field name="name">company.info.form</field>
+        <field name="model">company.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class='row'>
+                        <div class='col'>
+                            <group>
+                                <field name="name" style="margin-right: 2px;"></field>
+                                <field name="partner_id" style="margin-right: 2px;"></field>
+                                <field name="st_add" style="margin-right: 2px;"></field>
+                                <field name="post_code"></field>
+                                <field name="country"></field>
+                                 <field name="attentionto"></field>
+                            </group>
+                        </div>
+                    </div> 
+                    <notebook>
+                        <page name="invoice" string="Invoice">
+                            <group>
+                                <field name="invoice_no"></field>
+                                <field name="date"></field>
+                                <field name="your_ref"></field>
+                                <field name="our_ref"></field>
+                                <field name="credit_term"></field>
+                            </group>
+                        </page>
+                        <page name="product" string="Product" >
+                            <group>
+                                    <field name="product_tmpl_id"></field> 
+                                </group>
+                        </page>
+                        <page name="comment" string="Comment">
+                            <group>
+                                    <field name="comment"></field>
+                            </group>
+                        </page>
+                        <page name="amount" string="amount" invisible="1">
+                            <group>
+                                <field name="subtotal"></field>
+                                <field name="gst_amount"></field>
+                                <field name="pst_amount"></field>
+                                <field name="invoice_total"></field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_company" model="ir.actions.act_window">
+        <field name="name">Company Info</field>
+        <field name="res_model">company.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+    <menuitem id="menu_report" name="Report"/>
+    <menuitem id="menu_company" name="Company Info" parent='menu_report' action='action_company'/>
+</odoo>
