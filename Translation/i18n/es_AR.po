@@ -1,0 +1,425 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* custom_product_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 05:16+0000\n"
+"PO-Revision-Date: 2025-02-26 05:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: custom_product_report
+#: model:ir.actions.report,print_report_name:custom_product_report.action_report_custom
+msgid "'Report - %s' % (object.name)"
+msgstr "Informe"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid ""
+"<br/>\n"
+"                        GST:"
+msgstr "IVA"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid ""
+"<br/>\n"
+"                        Invoice Total:"
+msgstr "Total de la factura"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid ""
+"<br/>\n"
+"                        PST:"
+msgstr "hora del Pacífico"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid ""
+"<span style=\"font-weight: bold; font-size: 20px;\">Tearms and Condition</span><br/>\n"
+"                            • Terms and conditions agreements inform users about the rules and expectations for using a website or app.<br/>\n"
+"                            • These agreements are also where you can establish and communicate your governing laws and dispute resolutions.<br/>\n"
+"                            • It may hold up in court so long as long as your rules fall within applicable laws and users read and agreed to it.<br/>\n"
+"                            Account Name:<br/>\n"
+"                            Account No:<br/>"
+msgstr "Lágrimas y condición"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "<span style=\"font-weight: bold;\">Amount</span>"
+msgstr "Cantidad"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "<span style=\"font-weight: bold;\">Description</span>"
+msgstr "Descripción"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "<span style=\"font-weight: bold;\">Product ID</span>"
+msgstr "ID del producto"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "<span style=\"font-weight: bold;\">Quantity</span>"
+msgstr "Cantidad"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "<span style=\"font-weight: bold;\">Unit Price</span>"
+msgstr "Precio unitario"
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__age
+#, python-format
+msgid "Age"
+msgstr ""
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#, python-format
+msgid "Age Warning"
+msgstr "Advertencia de edad"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Attention to:"
+msgstr "Atención a"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__balanceduo
+msgid "Balance Duo"
+msgstr "Equilibrio dúo"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Balance Duo:"
+msgstr "Equilibrio dúo"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__birthdate
+msgid "Birthdate"
+msgstr ""
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__post_code
+msgid "City,State/Province,Zip/Post code"
+msgstr "Ciudad, Estado/Provincia, Código Postal"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "City,State/Province,Zip/Post code:"
+msgstr "Ciudad, Estado/Provincia, Código Postal"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__comment
+#: model:ir.model.fields,field_description:custom_product_report.field_sale_order__comment
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_company
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: custom_product_report
+#: model:ir.actions.act_window,name:custom_product_report.action_company
+#: model:ir.ui.menu,name:custom_product_report.menu_company
+msgid "Company Info"
+msgstr "Información de la empresa"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__attentionto
+msgid "Contact Person"
+msgstr "Persona de contacto"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__country
+msgid "Country"
+msgstr "País"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Country:"
+msgstr "País"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__create_uid
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__create_date
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__credit_term
+msgid "Credit Term"
+msgstr "Plazo de crédito"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Credit Term:"
+msgstr "Plazo de crédito"
+
+#. module: custom_product_report
+#: model:ir.actions.report,name:custom_product_report.action_report_custom
+msgid "Custom Product Report"
+msgstr "Informe de producto personalizado"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__partner_id
+msgid "Customer Name"
+msgstr "Nombre del cliente"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Customer Name:"
+msgstr "Nombre del cliente"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Date:"
+msgstr "Fecha"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__display_name
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_translate_form
+msgid "Enter Your Birthdate"
+msgstr ""
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__gst_amount
+msgid "GST"
+msgstr "IVA"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__id
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__id
+msgid "ID"
+msgstr "IDENTIFICACIÓN"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_company
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__invoice_no
+msgid "Invoice No"
+msgstr "Número de factura"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Invoice No:"
+msgstr "Número de factura"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__invoice_total
+msgid "Invoice Total"
+msgstr "Total de la factura"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__write_uid
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por última vez por"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__write_date
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__our_ref
+msgid "Our Ref"
+msgstr "Nuestro árbitro"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Our ref:"
+msgstr "nuestro árbitro"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__pst_amount
+msgid "PST"
+msgstr "hora del Pacífico"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_company
+msgid "Product"
+msgstr "Producto"
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__description
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_translate_form
+#, python-format
+msgid "Product Description"
+msgstr "Descripción del Producto"
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__pro_name
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_translate_form
+#, python-format
+msgid "Product Name"
+msgstr "Nombre del producto"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__product_tmpl_id
+msgid "Products"
+msgstr "Producto"
+
+#. module: custom_product_report
+#: model:ir.ui.menu,name:custom_product_report.menu_report
+msgid "Report"
+msgstr "Informe"
+
+#. module: custom_product_report
+#: model:ir.ui.menu,name:custom_product_report.menu_company_sale
+msgid "Sale Order"
+msgstr "Orden de venta"
+
+#. module: custom_product_report
+#: model:ir.model,name:custom_product_report.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Ship to Name:"
+msgstr "Enviar a nombre"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Ship to Street Address:"
+msgstr "Enviar a dirección postal:"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Ship to<br/>"
+msgstr "Envie a"
+
+#. module: custom_product_report
+#: model:ir.model,name:custom_product_report.model_company_info
+msgid "Sold to"
+msgstr "Vendido a"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Sold to<br/>"
+msgstr "Vendido a"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__st_add
+msgid "Street Address"
+msgstr "Dirección"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Street Address:"
+msgstr "Dirección"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Sub Total:"
+msgstr "Subtotal"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "TAX INVOICE"
+msgstr "FACTURA DE IMPUESTO"
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#, python-format
+msgid "The age you entered is less than 15. Please verify."
+msgstr "La edad que ingresó es menor de 15 años. Verifique."
+
+#. module: custom_product_report
+#: model:ir.actions.act_window,name:custom_product_report.action_translate
+msgid "Tramsamission"
+msgstr "Transmisión de tranvía"
+
+#. module: custom_product_report
+#: model:ir.model,name:custom_product_report.model_translate_info
+msgid "Transamission"
+msgstr "Transmisión de tranvía"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_translate_form
+msgid "Your Age"
+msgstr ""
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__name
+msgid "Your Business Name"
+msgstr "El nombre de tu empresa"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_company_info__your_ref
+msgid "Your Ref"
+msgstr "Tu árbitro"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "Your Ref:"
+msgstr "Tu árbitro"
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.view_company
+msgid "amount"
+msgstr "cantidad"
+
+#. module: custom_product_report
+#. odoo-python
+#: code:addons/custom_product_report/models/translate.py:0
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__check
+#, python-format
+msgid "check"
+msgstr ""
+
+#. module: custom_product_report
+#: model_terms:ir.ui.view,arch_db:custom_product_report.product_report_template
+msgid "comment"
+msgstr "comentario"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_translate_info__name
+msgid "name"
+msgstr "nombre"
+
+#. module: custom_product_report
+#: model:ir.model.fields,field_description:custom_product_report.field_sale_order__select
+msgid "select your order"
+msgstr "selecciona tu pedido"

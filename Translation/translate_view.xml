@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_translate_form" model="ir.ui.view">
+        <field name="name">translate.info.view</field>
+        <field name="model">translate.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" string="Product Name"/>
+                    <field name="description" string="Product Description"/>
+                    <field name="birthdate" string="Enter Your Birthdate"></field>
+                    <field name="age" string="Your Age"></field>
+                    <!-- <field name="check" string="check"></field> -->
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_translate" model="ir.actions.act_window">
+        <field name="name">Tramsamission</field>
+        <field name="res_model">translate.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_company_sale" name="Sale Order" parent='menu_report' action='action_translate'/>
+</odoo>
