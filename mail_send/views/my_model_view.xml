@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <record id="view_form_my_model" model="ir.ui.view">
+            <field name="name">my.custom.model.form</field>
+            <field name="model">my.custom.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <header>
+                            <button name="send_email_template"
+                                    type="object"
+                                    string="Send Email"
+                                    class="btn-primary"/>
+                        </header>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <record id="view_my_custom_model_tree" model="ir.ui.view">
+        <field name="name">my.custom.model.tree</field>
+        <field name="model">my.custom.model</field>
+        <field name="arch" type="xml">
+            <tree string="Mail">
+                <field name="name"></field>  
+                <field name="email"></field>            
+            </tree>
+        </field>
+    </record>
+
+        <record id="action_my_custom_model" model="ir.actions.act_window">
+            <field name="name">Send Model</field>
+            <field name="res_model">my.custom.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <menuitem id="menu_company" name="Send Mail" parent='menu_report' action='action_my_custom_model'/>
+
+    </data>
+</odoo>
