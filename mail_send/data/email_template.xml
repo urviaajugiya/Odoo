@@ -2,7 +2,7 @@
     <data noupdate="1">
         <record id="my_email_template" model="mail.template">
             <field name="name">My Custom Email Template</field>
-            <!--true <field name="email_from">{{ (object.email if object.email else 'urviaajugiya77@gmail.com') }}</field> -->
+            <field name="email_from">{{ (object.email if object.email else 'urviaajugiya77@gmail.com') }}</field>
             <field name="email_from">${(user.email or 'urviaajugiya77@gmail.com')}</field>
             <!-- <field name="email_to">{{ (object.email_formatted) }}</field> -->
             <field name="email_to">{{ (object.email if object.email else 'urviaajugiya7@gmail.com') }}</field>
