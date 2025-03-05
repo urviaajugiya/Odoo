@@ -1,0 +1,28 @@
+<!-- views/product_view.xml -->
+<odoo>
+    <record id="view_product_form" model="ir.ui.view">
+        <field name="name">product.manager.form</field>
+        <field name="model">product.manager</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="product"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the form view -->
+    <record id="action_product_manager" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.manager</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item for Product Manager -->
+    <menuitem id="menu_product_manager" parent="menu_action"  name="Product Manager" action="action_product_manager" groups="group_product_manager"/>
+</odoo>
