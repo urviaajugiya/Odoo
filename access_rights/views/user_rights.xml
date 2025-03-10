@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_user_rights_form" model="ir.ui.view">
+        <field name="name">user.rights.form</field>
+        <field name="model">user.rights</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group name="User" string="User">
+                            <field name="name"></field>
+                            <field name="product_id_read" group="base.group_restrict_description_access_rule" ></field>
+                            <!-- <field name="product_id_read" ></field> -->
+                            <field name="payment_term" ></field>
+                        </group>
+                        <group name="Authority" string="Authority">
+                            <field name="description"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_user_rights" model="ir.actions.act_window">
+        <field name="name">User Rights</field>
+        <field name="res_model">user.rights</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_user_rights" parent="menu_action"  name="User Rights" action="action_user_rights" groups="group_user_rights"/>
+</odoo>

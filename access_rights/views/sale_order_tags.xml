@@ -1,0 +1,24 @@
+<odoo>
+     <record id="view_sale_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="select" placeholder="Enter custom value" groups="action_module.group_sale_order_tag"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="comment" placeholder="Comment" groups="action_module.group_sale_order_tag"/>
+            </xpath>        
+        </field>
+    </record>   
+
+    <record id="action_sale_order_tag" model="ir.actions.act_window">
+        <field name="name">Sale Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_sale_order_tag" parent="menu_action"  name="Sale Order Tag" action="action_sale_order_tag" groups="group_sale_order_tag"/>
+</odoo>

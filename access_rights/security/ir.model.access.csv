@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_role,access_user_role,model_user_role,action_module.group_user_Access,1,1,1,1
+access_product_manager,access_product_manager,model_product_manager,action_module.group_product_manager,1,0,1,1
+access_user_rights,access_user_rights,model_user_rights,action_module.group_user_rights,1,1,1,1
+access_sale_order,access_sale_order,model_sale_order,action_module.group_sale_order_tag,1,0,0,0
