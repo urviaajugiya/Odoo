@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_product_form" model="ir.ui.view">
+        <field name="name">activity.analysis.form</field>
+        <field name="model">activity.analysis</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"></field>
+                        <field name="last_pass"></field>
+                        <field name="stream"></field>
+                    </group>
+                     
+                </sheet>
+                <footer>
+                <button string="Generate Report" type="object" name="generate_xlsx_report" class="btn-primary"/>
+            </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_activity_analysis" model="ir.actions.act_window">
+        <field name="name">Activity Analysis</field>
+        <field name="res_model">activity.analysis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_activity_analysis" parent="menu_action"  name="Activity Analsis" action="action_activity_analysis"/>
+</odoo>

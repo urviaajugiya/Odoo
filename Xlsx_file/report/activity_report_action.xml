@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <!-- Report Action for XLSX -->
+        <report
+            id="action_report_activity"
+            model="report.action_module.view_activity_analysis"
+            string="Activity Analysis Report XLSX"
+            report_type="xlsx"
+            name="action_module.view_activity_analysis"
+            file="action_module.view_activity_analysis"
+            print_report_name="'Activity Analysis Report - %s' % (object.name)"
+        />
+    </data>
+</odoo>

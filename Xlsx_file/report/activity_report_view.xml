@@ -1,0 +1,60 @@
+<odoo>
+    <record id="view_activity_analysis" model="ir.ui.view">
+        <field name="name">activity.analysis.form</field>
+        <field name="model">activity.analysis</field>
+        <field name="arch" type="xml">
+            <form>
+            <header>
+            <div style="text-align: center; width: 100%;">
+                <button name="generate_xlsx_report" type="object" string="Generate Current Report" class="btn-primary"/>
+                <button name="all_generate_xlsx_report" type="object" string="Generate All Report" class="btn-primary"/>
+            </div>
+            </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"></field>
+                            <field name="add_date"></field>
+                            <field name="email"></field>
+                            <field name="addr"></field>
+                        </group>
+                        <group>
+                            <field name="phone"></field>
+                            <field name="age"></field>
+                            <field name="last_pass"></field>
+                            <field name="stream"></field>
+                        </group>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="view_activity_analysis_tree" model="ir.ui.view">
+        <field name="name">activity.analysis.tree</field>
+        <field name="model">activity.analysis</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"></field>
+                <field name="add_date"></field>
+                <field name="email"></field>
+                <field name="addr"></field>
+                <field name="phone"></field>
+                <field name="age"></field>
+                <field name="last_pass"></field>
+                <field name="stream"></field>     
+                <button name="generate_xlsx_report" type="object" string="Generate Current Report" class="btn-primary"/>
+                <button name="all_generate_xlsx_report" type="object" string="Generate All Report" class="btn-primary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_activity_analysis" model="ir.actions.act_window">
+        <field name="name">Activity Analysis</field>
+        <field name="res_model">activity.analysis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_activity_analysis" parent="menu_action"  name="Activity Analsis" action="action_activity_analysis"/>
+</odoo>
