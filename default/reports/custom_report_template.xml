@@ -1,0 +1,40 @@
+<odoo>
+<!--<template id="custom_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="report">
+                <div class="page">
+                    <h2>Report Name: <span t-field="report.name"/></h2>
+                    <p>Description: <span t-field="report.description"/></p>
+                    <p>Date: <span t-field="report.date"/></p>
+                </div>
+            </t>
+        </t>
+    </template>-->
+
+  
+    <template id="custom_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="report">
+                <div class="page">
+                    <h2>Custom Report for: <t t-esc="report.name"/></h2>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr t-att-class="'bg-200 fw-bold o_line_section'">
+                                <th>Description:</th>
+                                <th>Date:</th>
+                                <th>Selected Product:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td t-esc="report.description"/>
+                                <td t-esc="report.date"/>
+                               <td t-esc="report.product_tmpl_id"/> 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

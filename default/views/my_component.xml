@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="my_component_template">
+            <t t-name="demo_addons.MyComponent">
+                <div t-on-click="increment">
+                    <t t-esc="state.value"/>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

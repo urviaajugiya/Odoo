@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_js_button" model="ir.ui.view">
+        <field name="name">JS Button</field>
+        <field name="model">con.mod</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"></field>
+                    <div id="my_component_container"></div>
+                    <!-- <button name="counter_value"
+                                    type="object"
+                                    string="JS Timer"
+                                    class="btn-primary"/> -->
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_js_vutton" model="ir.actions.act_window">
+        <field name="name">JS Button</field>
+        <field name="res_model">con.mod</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_Button" name="Buttons" parent='menu_form' action='action_js_vutton'/>
+</odoo>

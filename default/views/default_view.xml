@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report" model="ir.ui.view">
+        <field name="name">custom.report.form</field>
+        <field name="model">custom.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class='row'>
+                        <div class='col'>
+                            <group>
+                                <field name="name"></field>
+                                <field name="description"></field>
+                                <field name="date"></field>
+                                <field name="product_tmpl_id"></field>
+                            </group>
+                        </div>
+                    </div>  
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_report" model="ir.actions.act_window">
+        <field name="name">Report Custom</field>
+        <field name="res_model">custom.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <record id="view_form" model="ir.ui.view">
+        <field name="name">first.model.form</field>
+        <field name="model">first.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class='row'>
+                        <div class='col'>
+                            <group>
+                                <field name="my_model_id"></field>
+                            </group>
+                        </div>
+                    </div>  
+                </sheet>
+            </form>
+        </field>
+    </record>   
+
+    <record id="view_form_1" model="ir.ui.view">
+        <field name="name">my.model.form</field>
+        <field name="model">my.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class='row'>
+                        <div class='col'>
+                            <group>
+                                <field name="name"></field>
+                                <field name="status"></field>
+                            </group>
+                        </div>
+                    </div>  
+                </sheet>
+            </form>
+        </field>
+    </record>  
+    <record id="view_task_tree" model="ir.ui.view">
+        <field name="name">my.model.tree</field>
+        <field name="model">my.model</field>
+        <field name="arch" type="xml">
+            <tree string="Task">
+                <field name="name"/>               
+                <field name="status"></field>     
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_task_tree" model="ir.ui.view">
+        <field name="name">first.model.tree</field>
+        <field name="model">first.model</field>
+        <field name="arch" type="xml">
+            <tree string="Task">
+                <field name="my_model_id"></field>               
+            </tree>
+        </field>
+    </record>
+    <record id="action_form" model="ir.actions.act_window">
+        <field name="name">Related Record</field>
+        <field name="res_model">first.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <record id="action_form_my" model="ir.actions.act_window">
+        <field name="name">Form</field>
+        <field name="res_model">my.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+    <menuitem id="menu_form" name="Forms"/>
+
+    <menuitem id="menu_form_1" name="Related Form" parent='menu_form' action='action_form'/>
+    
+    <!-- <menuitem id="menu_form__my" name="Form" parent='menu_form' action='action_form_my'/>
+
+    <menuitem id="menu_report" name="Report" parent='menu_form' action='action_report'/> -->
+</odoo>

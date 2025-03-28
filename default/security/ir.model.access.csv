@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_first_model,access_first_model,model_first_model,base.group_user,1,1,1,1
+access_my_model,access_my_model,model_my_model,base.group_user,1,1,1,1
+access_custom_report,access_custom_report,model_custom_report,base.group_user,1,1,1,1
+access_con_mod,access_con_mod,model_con_mod,base.group_user,1,1,1,1

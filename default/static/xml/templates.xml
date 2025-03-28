@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="my_component_template">
+    <t t-name="default.MyComponent">
+        <h2>Hellooooooooooooo</h2>
+        <div t-on-click="increment">
+            <t t-esc="state.value"/>
+        </div>
+    </t>
+</template>

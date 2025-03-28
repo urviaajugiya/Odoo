@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- <template id="assets_backend" name="button_component_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="test/javascript" src="/default/static/src/js/my_component.js"></script>
+            </xpath>
+        </template> -->
+
+
+        <template id="my_component_template">
+            <t t-name="default.MyComponent">
+                <div t-on-click="increment">
+                    <t t-esc="state.value"/>
+                </div>    
+            </t>
+        </template>
+    </data>
+</odoo>
