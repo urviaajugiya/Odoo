@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    
+    <t t-name="default.NotebookPage">
+    <style>
+            .down-center {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 10px; 
+            font-size: 24px;
+            }
+
+    </style>
+        <Notebook orientation="'horizontal'">
+            <t t-set-slot="about" title="'About'" isVisible="true">
+                <!-- About Us Section -->
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold">About Us</h2>
+                            <p class="text-muted">Learn more about our company's mission, values, and team.</p>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img src="default/static/image/img_2.jpeg" alt="About Us" class="img-fluid rounded" width="500" height="auto"/>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Our Story</h3>
+                                <p>Founded in 2003, XYZ has been committed to delivering innovative solutions that drive meaningful change. Our journey began with a simple idea: to harness technology and creativity to solve real-world problems.</p>
+                                <p>Over the years, we've grown into a diverse team of professionals dedicated to excellence, trust, and building long-term partnerships with our clients.</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-4 text-center">
+                                <h4>Our Mission</h4>
+                                <p>To empower businesses with technology and creativity — turning ideas into reality.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h4>Our Vision</h4>
+                                <p>To be a global leader in providing innovative and reliable digital solutions.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h4>Our Values</h4>
+                                <p>Integrity, Innovation, Collaboration, and Customer Success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+
+            <!-- Services Section -->
+            <t t-set-slot="service" title="'Service'" isVisible="true">
+                <section class="py-5 bg-light">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold">Our Services</h2>
+                            <p class="text-muted">Empowering your business through innovative solutions</p>
+                        </div>
+                        <div class="row g-4">
+                            <!-- Web Development Card 1 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <t t-foreach="state.allSevices" t-as="serve" t-key="serve.id">
+                                            <img src="default/static/image/img_3.jpeg" alt="Web Development" width="80" height="80" class="mb-3"/>
+                                            <!-- <h5 class="card-title">Web Development</h5> -->
+                                            <h5 class="card-title"><t t-esc="serve.name" /></h5>
+                                            <!-- <p class="card-text">Building responsive and scalable web applications tailored to your business needs.</p> -->
+                                            <p class="card-text"><t t-esc="serve.service_des"/></p>
+                                        </t>
+                                    </div>
+                                    <!-- <button t-on-click="handleclickevent" class="btn btn-primary">Button Click</button> -->
+                                </div>
+                            </div>
+                            <!-- Mobile App Development Card 2 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <img src="default/static/image/img_4.jpeg" alt="Mobile App Development" width="80" height="80" class="mb-3"/>
+                                        <h5 class="card-title">Mobile App Development</h5>
+                                        <p class="card-text">Creating user-friendly mobile applications for both Android and iOS platforms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Business Consulting Card 3 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <img src="default/static/image/img_5.jpg" alt="Business Consulting" width="80" height="80" class="mb-3"/>
+                                        <h5 class="card-title">Business Consulting</h5>
+                                        <p class="card-text">Providing expert advice to optimize your business strategies and operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Odoo ERP Card 4 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <img src="default/static/image/img_6.jpeg" alt="Web Development" width="80" height="80" class="mb-3"/>
+                                        <h5 class="card-title">Odoo ERP Development</h5>
+                                        <p class="card-text"> It offers features like real-time data, customizable 
+                                        workflows, and strong support. </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Game Development Card 5 -->
+                            <div class="col-md-4">  
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <img src="default/static/image/img_7.jpeg" alt="Web Development" width="80" height="80" class="mb-3"/>
+                                        <h5 class="card-title">Game Development</h5>
+                                        <p class="card-text"> Game development is the process of creating video games by combining art, design,
+                                        programming, and other skills. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </t>
+
+            <!-- Contact Us Section -->
+            <t t-set-slot="contact" title="'Contact'" isVisible="true">
+                <section class="py-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                    <h2 class="fw-bold">Contact Us</h2>
+                    <p class="text-muted">We'd love to hear from you. Fill out the form or use the contact information below.</p>
+                    </div>
+                    <div class="row">
+                    <!-- Contact Form -->
+                    <div class="col-md-6">
+                        <h4 class="mb-4">Get in Touch</h4>
+                        <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Enter your name"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="name@example.com"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="subject"
+                            placeholder="Subject"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea
+                            class="form-control"
+                            id="message"
+                            rows="5"
+                            placeholder="Your message here"
+                            ></textarea>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Send Message</button> -->
+                        </form>
+                    </div>
+                    <!-- Contact Information -->
+                    <div class="col-md-6">
+                        <h4 class="mb-4">Contact Information</h4>
+                        <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            123 Main Street, Rajkot, Gujrat, India
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            +123 456 7890
+                        </li>
+                        <li class="mb-2">
+                            info@xyz.com
+                        </li>
+                        </ul>
+                        <div class="mt-4">
+                        <h4>Follow Us</h4>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </section>
+            </t>
+
+        </Notebook>    
+    </t>
+</templates>

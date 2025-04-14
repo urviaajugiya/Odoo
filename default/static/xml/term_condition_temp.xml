@@ -1,0 +1,14 @@
+<templates xml:space="preserve">
+    <t t-name="default.TermCondition">
+        <div>
+            <!-- <button t-on-click="handleclickevent" class="btn btn-primary">Button Click</button>
+            <t t-esc="state.allTerm.term"/> -->
+
+            <t t-foreach="state.allTerm" t-as="demo" t-key="demo.name">
+                <div>
+                    <p><t t-esc="demo.term" /></p>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

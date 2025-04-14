@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="widget_form" model="ir.ui.view">
+            <field name="name">Widget.form</field>
+            <field name="model">widget.popup</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class='row'>
+                            <div class='col'>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="active"/>
+                                    <field name="status"/>
+                                </group>
+                            </div>
+                        </div>
+                        <header>
+                            <button name="%(action_widget_js)d"
+                                    type="action"
+                                    string="Term and Condition"
+                                    class="btn-primary"/>
+                        </header>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree" model="ir.ui.view">
+            <field name="name">Widget.tree</field>
+            <field name="model">widget.popup</field>
+            <field name="arch" type="xml">
+                <tree string="Widget Tasks">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_widget_js" model="ir.actions.client">
+            <field name="name">Widget JS Popup</field>
+            <field name="tag">default.Popup</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="action_widget_form" model="ir.actions.act_window">
+            <field name="name">Widget</field>
+            <field name="res_model">widget.popup</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem id="menu_widget_js" name="Widget" parent="menu_form" action="action_widget_form"/>
+    </data>
+</odoo>

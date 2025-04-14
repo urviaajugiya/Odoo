@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="menu_service" model="website.menu">
+            <field name="name">Services</field>
+            <field name="url">/default/models/add.services/get_services</field>
+            <field name="parent_id" ref="website.main_menu"/>
+        </record>
+
+         <template id="dashboard_page_template" name="Dashboard">
+            <t t-call="website.layout">
+                <div class="container">
+                    <h1>Page of Dashboard</h1>
+                </div>
+            </t>
+        </template>
+        
+    </data>
+</odoo>

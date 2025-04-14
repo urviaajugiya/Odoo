@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="default.SaleWidget">
+        
+        <!-- <form id ="myForm"> -->
+            <p style="margin-left: 10px">Welcome to our website. These terms and conditions outline the rules and regulations for the use of our website.</p>
+            <p style="margin-left: 10px">By accessing or using our website, you agree to comply with these terms.</p>
+            <p style="margin-left: 10px">Your privacy is important to us. We will not share your personal information with third parties.</p>
+        <!-- </form> -->
+               
+    </t>
+</templates>

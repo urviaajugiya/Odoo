@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="term_add_services_form" model="ir.ui.view">
+            <field name="name">add.services.form</field>
+            <field name="model">add.services</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class='row'>
+                            <div class='col'>
+                                <group>
+                                    <field name="name"></field>
+                                    <field name="service_des"></field>
+                                </group>
+                            </div>
+                        </div>
+                        <button name="get_services"
+                                        type="object"
+                                        string="Term"
+                                        class="btn-primary"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="term_add_services_tree" model="ir.ui.view">
+            <field name="name">add.services.tree</field>
+            <field name="model">add.services</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="service_des"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_add_services" model="ir.actions.act_window">
+            <field name="name">Add Services</field>
+            <field name="res_model">add.services</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>   
+        </record>
+
+        <menuitem id="menu_add_services" name="Add Services" parent='sale.menu_sale_config' action='action_add_services'/>
+
+    </data>
+</odoo>

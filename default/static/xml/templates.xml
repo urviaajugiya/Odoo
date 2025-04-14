@@ -1,9 +1,222 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<template id="my_component_template">
+<templates xml:space="preserve">
     <t t-name="default.MyComponent">
-        <h2>Hellooooooooooooo</h2>
-        <div t-on-click="increment">
-            <t t-esc="state.value"/>
-        </div>
+    <style>
+        .swiper-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        background: #fff;
+        margin-left: 5px;
+        margin-top: 10px;
+        }
+        .swiper-wrapper {
+        display: flex;
+        transition: transform 0.3s ease;
+        }
+        .swiper-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        background-color:rgb(176, 203, 232);
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        }
+        .swiper-buttons {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        }
+        .swiper-button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        }
+        .swiper-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .container{
+            margin-top : 5px;
+            margin-left : 5px;
+            height: 100%;
+            width: 100%; 
+            overflow-y: auto; 
+        }
+    </style>
+        <div class="container">
+            <div>
+            <!-- <Pager offset="0" limit="80" total="50" onUpdate="doSomething" /> -->
+            <h3>Horizontal Notebook Page</h3>
+            <Notebook orientation="'horizontal'">
+                <t t-set-slot="page_1" title="'Page 1'" isVisible="true">
+                    <h1>My First Page</h1>
+                    <p>It's time to build Owl components. Did you read the documentation?</p>
+                </t>
+                <t t-set-slot="page_2" title="'2nd page'" isVisible="true">
+                    <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
+                </t>
+            </Notebook><br/>
+            <h3>Vertical Notebook Page</h3>
+            <Notebook orientation="'vertical'">
+                <t t-set-slot="page_1" title="'3rd page'" isVisible="true">
+                    <h1></h1>
+                    <p>It's time to build Owl components. Did you read the documentation?</p>
+                </t>
+                <t t-set-slot="page_2" title="'4th page'" isVisible="true">
+                    <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
+                </t>
+            </Notebook>
+            </div><br/>
+            <h3>Check The Template is working</h3>
+            <h2>Hellooooooooooooo</h2><br/> 
+            <h3>Increment Button When we click , it's increment</h3>
+            <h3>Increment the number</h3><button t-on-click="increment">
+                <t t-esc="state.value"/>
+            </button><br/>
+            <br/><h3>Modify Message When Button Click!!!</h3><button t-on-click="changeMessage">
+                <t t-esc="state.message"/>
+            </button><br/>
+            <!-- <br/><h3>Using ActionSwiper Change the slide:</h3>
+            <ActionSwiper
+                onRightSwipe="
+                {
+                action: '() => Delete item',
+                icon: 'fa-delete',
+                bgColor: 'bg-danger',
+                }"
+                onLeftSwipe="
+                {
+                action: '() => Star item',
+                icon: 'fa-star',
+                bgColor: 'bg-warning',
+                }"
+                >       
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="/default/static/image/icon.png" alt="Slide 1" class="swiper-image"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="/default/static/image/icon2.png" alt="Slide 2" class="swiper-image"/>
+                        </div>
+                    </div>
+                    <div class="swiper-buttons">
+                        <button class="swiper-button-next" t-on-click="onRightSwipe">❮</button>
+                        <button class="swiper-button-prev" t-on-click="onLeftSwipe">❯</button>
+                    </div>
+                </div>
+            </ActionSwiper><br/> -->
+            <br/><h3>Using CheckBox</h3>
+            <h4>Select Any One Framework Of Python</h4>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                Odoo Framework
+            </CheckBox>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                Django Framework
+            </CheckBox>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                Flast Framework
+            </CheckBox>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                Odoo Framework
+            </CheckBox>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                FastAPI Framework
+            </CheckBox>
+            <CheckBox value="boolean" disabled="boolean" t-on-change="onValueChange">
+                Web2py Framework
+            </CheckBox><br/>
+
+            <!-- <div class="o_dropdown_container">
+                <button type="button" class="btn btn-primary o_dropdown_button" t-on-click="toggleDropdown">
+                    <span>Dropdown</span>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <t t-if="state.isOpen">
+                    <ul class="o_dropdown_menu">
+                        <t t-component="DropdownItem" label="10" onSelected="selectItem1" />
+                        <t t-component="DropdownItem" label="12" onSelected="selectItem2" />
+                        <t t-component="DropdownItem" label="15" onSelected="selectItem3" />
+                    </ul>
+                </t>
+            </div> -->
+            <!-- <div class="div_1">
+                <Dropdown>
+                    <DropdownItem t-on-click="() => console.log('Item 1 clicked')">
+                        Item 1
+                    </DropdownItem>
+                    <DropdownItem t-on-click="() => console.log('Item 2 clicked')">
+                        Item 2
+                    </DropdownItem>
+                    <DropdownItem t-on-click="() => console.log('Item 3 clicked')">
+                        Item 3
+                    </DropdownItem>
+                </Dropdown>
+            </div>
+            <Dropdown>
+            <button>File</button>
+            <t t-set-slot="content">
+                <DropdownItem onSelected="() => this.onItemSelected('file-save')">Save</DropdownItem>
+                <DropdownItem onSelected="() => this.onItemSelected('file-open')">Open</DropdownItem>
+
+                <Dropdown>
+                <button>New</button>
+                <t t-set-slot="content">
+                    <DropdownItem onSelected="() => this.onItemSelected('file-new-document')">Document</DropdownItem>
+                    <DropdownItem onSelected="() => this.onItemSelected('file-new-spreadsheet')">Spreadsheet</DropdownItem>
+                </t>
+                </Dropdown>
+            </t>
+        </Dropdown> -->
+        <!-- <div> -->
+            <!-- <Pager offset="0" limit="80" total="50" onUpdate="doSomething" /> -->
+            <!-- <h3>Horizontal Notebook Page</h3> -->
+            <!-- <Notebook orientation="'horizontal'">
+                <t t-set-slot="page_1" title="'Page 1'" isVisible="true">
+                    <h1>My First Page</h1>
+                    <p>It's time to build Owl components. Did you read the documentation?</p>
+                </t>
+                <t t-set-slot="page_2" title="'2nd page'" isVisible="true">
+                    <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
+                </t>
+            </Notebook><br/>
+            <h3>Vertical Notebook Page</h3>
+            <Notebook orientation="'vertical'">
+                <t t-set-slot="page_1" title="'3rd page'" isVisible="true">
+                    <h1></h1>
+                    <p>It's time to build Owl components. Did you read the documentation?</p>
+                </t>
+                <t t-set-slot="page_2" title="'4th page'" isVisible="true">
+                    <p>Wise owl's silent flight. Through the moonlit forest deep, guides my path to code</p>
+                </t>
+            </Notebook> -->
+        <!-- </div> -->
+        <br/><h3>SelectMenu Using</h3>
+        <SelectMenu
+            choices="choices"
+            groups="groups"
+            value="'value_2'"
+            >
+            Make a choice!
+            <t t-set-slot="choice" t-slot-scope="choice">
+                <span class="coolClass" t-esc="'👉 ' + choice.data.label + ' 👈'" />
+            </t>
+        </SelectMenu>
+        </div><br/>
     </t>
-</template>
+</templates>

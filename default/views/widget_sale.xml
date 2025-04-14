@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_sale_widget_js" model="ir.actions.client">
+            <field name="name">Terms</field>
+            <field name="tag">default.SaleWidget</field>
+            <field name="target">new</field>
+    </record>
+
+    <record id="view_sale_order" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="select" placeholder="Enter custom value"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="comment" placeholder="Comment"/>
+            </xpath>
+            <!-- <xpath expr="//field[@name='payment_term_id']" position="after">
+                <button name="%(action_sale_widget_js)d"
+                                    type="action"
+                                    string="Term"
+                                    class="btn-primary"/>
+            </xpath> -->
+        </field>
+    </record>
+
+    <!-- <record id="view_sale_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <button name="%(action_sale_widget_js)d"
+                        class = "btn"
+                        type="action"
+                        icon="fa-bars"/>
+                </xpath>
+        </field>
+    </record> -->
+
+    <record id="action_sale" model="ir.actions.act_window">
+        <field name="name">Sale Order</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>   
+    </record>
+
+    <menuitem id="menu_sale" name="Sale Order" parent='menu_form' action='action_sale'/>
+
+    <!-- <menuitem id="menu" name="example" parent='sale.menu_sale_config' action='action_sale'/> -->
+
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="default.Popup">
+        <style>
+        </style>
+            <div class="popup-overlay">
+                <div class="popup-content">
+                    <h3>Term and Condition</h3>
+                    <!-- Form with input fields -->
+                    <form t-on-submit.prevent="submitForm">
+                        <h2>1. Introduction</h2>
+                        <p>Welcome to our website. These terms and conditions outline the rules and regulations for the use of our website.</p>
+            
+                        <h2>2. User Agreement</h2>
+                        <p>By accessing or using our website, you agree to comply with these terms.</p>
+
+                        <h2>3. Privacy Policy</h2>
+                        <p>Your privacy is important to us. We will not share your personal information with third parties.</p>
+
+                        <h2>4. Content Ownership</h2>
+                        <p>All content on this website is owned by us and is protected by copyright law.</p>
+
+                        <h2>5. Limitation of Liability</h2>
+                        <p>We are not liable for any damages arising from the use of this website.</p>
+
+                        <label for="checkbox">Read all Terms</label><br/>
+                        <!-- <input type="checkbox" id="checkbox" name="Checkbox"/></label><br/> -->
+                        <div>
+                            <button type="submit">Submit</button>
+                            <button t-on-click="hidePopup">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </t>
+</templates>

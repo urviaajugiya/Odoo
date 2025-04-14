@@ -4,8 +4,8 @@
        <field name="name">Custom Report</field>
        <field name="model">custom.report</field>
        <field name="report_type">qweb-pdf</field>
-       <field name="report_name">Default.custom_report_template</field>
-       <field name="report_file">Default.custom_report_template</field>
+       <field name="report_name">default.custom_report_template</field>
+       <field name="report_file">default.custom_report_template</field>
        <field name="print_report_name">'Report - %s' % (object.name)</field>
        <field name="binding_model_id" ref="model_custom_report"/>
        <field name="binding_type">report</field>
