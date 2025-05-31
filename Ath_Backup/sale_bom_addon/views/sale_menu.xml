@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_sale_bom" model="ir.ui.view">
+        <field name="name">view.sale.order.bom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="BOM Material">
+                    <field name="bom_line_ids" nolabel="1" duplicate="0">
+                        <list>
+                            <field name="product_id" readonly="1" duplicate="0"/>
+                            <field name="product_qty" readonly="1"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
