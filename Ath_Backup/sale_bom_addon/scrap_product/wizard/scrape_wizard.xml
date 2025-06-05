@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_stock_move_scrape_wizard" model="ir.ui.view">
+        <field name="name">stock.move.scrape.wizard</field>
+        <field name="model">stock.move.scrape.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Scrape Wizard">
+                <sheet>
+                    <group>
+                        <field name="production_id" invisible="1"/>
+                        <field name="move_line_ids">
+                            <list editable="bottom">
+                                <field name="product_id"/>
+                                <field name="location_id"/>
+                                <field name="scrape_qty"/>
+                                <field name="location_dest_id"/>
+                            </list>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_confirm_scrape" type="object" string="Scrape" class="btn-primary"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

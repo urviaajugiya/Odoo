@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_mrp_production" model="ir.ui.view">
+        <field name="name">view.mrp.production</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+               <header position="inside">
+                    <button name="open_scrape_wizard"
+                            type="object"
+                            string="Scrape"
+                            class="btn-primary"
+                            icon="fa-recycle"
+                            invisible="state != 'confirmed' and state != 'progress' and state != 'to_close'"
+                    />
+                </header>
+        </field>
+    </record>
+</odoo>
