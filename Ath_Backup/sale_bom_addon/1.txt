@@ -1,0 +1,85 @@
+ for line in self.move_raw_ids:
+            matching_scraps = self.scrap_ids.filtered(lambda rec: line.product_id == rec.product_id)
+
+            if not matching_scraps:
+                continue
+
+            total_scrap_qty = sum(matching_scraps.mapped('scrap_qty'))
+
+            if line.quantity > (line.product_uom_qty - total_scrap_qty):
+                raise ValidationError(
+                    f"Scrap quantity ({total_scrap_qty}) cannot be greater than available quantity "
+                    f"({line.quantity}) for product '{line.product_id.display_name}'."
+                )
+
+
+ q	
+        for line in self.move_raw_ids:
+            matching_scraps = self.scrap_ids.filtered(lambda rec: line.product_id == rec.product_id)
+
+            if not matching_scraps:
+                continue
+
+            total_scrap_qty = sum(matching_scraps.mapped('scrap_qty'))
+
+
+added_products = set()
+
+for move in mrp.move_raw_ids:
+    for line in move.move_line_ids:
+        if line.product_id.id in added_products:
+            continue
+        added_products.add(line.product_id.id)
+
+        matching_scraps = move.scrap_id.filtered(lambda rec: line.product_id == rec.product_id)
+        print("Matching scraps:", matching_scraps)
+
+        total_scrap_qty = sum(matching_scraps.mapped('scrap_qty'))
+        print("Total scrap qty:", total_scrap_qty)
+
+        move_lines_data.append((0, 0, {
+            'product_id': line.product_id.id,
+            'location_id': line.location_id.id,
+            'location_dest_id': line.location_dest_id.id,
+            'scrape_qty': 0.0,
+            'total_scrap_qty': total_scrap_qty,
+        }))
+
+    @api.depends('scrape_qty','product_id')
+    def _get_total_scrap(self):
+        print(self,":::::::::::::::::::::::::::")
+        for rec in self:
+            if  rec.scrape_qty:
+                print(rec.scrape_qty,"self.scrape_qty::::::::::::::::::::::::::::::::::::::::")
+                rec.total_scrap_qty += rec.scrape_qty
+                print(rec.total_scrap_qty,"self.total_scrap_qty::::::::::::::::")
+            else:
+                print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+
+access_stock_move_scrape_line,stock.move.scrape.line,model_stock_move_scrape_line,,1,1,1,1
+
+compute='_get_total_scrap'
+
+
+
+
+
+
+
+
+
+
+
+
+for move in mrp.move_raw_ids:
+    if move.product_id.id in added_products:
+        continue
+    added_products.add(move.product_id.id)
+
+    move_lines_data.append((0, 0, {
+        'product_id': move.product_id.id,
+        'location_id': move.location_id.id,
+        'location_dest_id': move.location_dest_id.id,
+        'scrape_qty': 0.0,
+    }))
