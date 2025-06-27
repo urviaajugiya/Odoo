@@ -1,0 +1,32 @@
+C:\Ath Software\ERP\erp.schnell.athsoftware.com
+	backups
+	production
+		logs
+		nssm-2.24
+		pthon
+		src
+	revisions
+
+
+
+
+cd "C:\Ath Software\ERP\erp.schnell.athsoftware.com\production\nssm-2.24\win64"
+nssm.exe install ERP_parasmani
+Path: Browse the path of Python.exe from production/python folder
+Startup directory: Browse and set the folder of Python folder
+Argument:
+"C:\Ath Software\ERP\erp.schnell.athsoftware.com\production\src\odoo-bin" -c "C:\Ath Software\ERP\erp.schnell.athsoftware.com\production\src\odoo.conf"
+
+Service Name: ERP_SCHNELL
+Display Name (in Details tab): ERP_SCHNELL
+
+Logon Tab:
+This Account: NT AUTHORITY\LOCAL SERVICE
+
+
+vimlesh.raulji@schneller.co.in
+
+
+pass
+
+Meh@Lin$20$25#284@172
