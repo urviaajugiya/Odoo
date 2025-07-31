@@ -1,0 +1,73 @@
+def _cron_send_daily_shipping_report(self):
+    """ cron method - send daily shipping Reposrts for UPS type """
+    user_tz_name = self.env.user.tz or 'Asia/Kolkata'
+    user_tz = pytz.timezone(user_tz_name)
+    today = fields.Date.context_today(self)
+
+    utc_start_datetime = user_tz.localize(datetime.combine(today, time(0, 0, 0)))
+    utc_end_datetime = user_tz.localize(datetime.combine(today, time(23, 59, 59)))
+
+    utc_start = utc_start_datetime.astimezone(pytz.UTC)
+    utc_end = utc_end_datetime.astimezone(pytz.UTC)
+
+    start_datetime = utc_start.strftime('%Y-%m-%d %H:%M:%S')
+    end_datetime = utc_end.strftime('%Y-%m-%d %H:%M:%S')
+
+    picking_ids = self.env['stock.picking'].search([
+        ('date_done', '>=', start_datetime),
+        ('date_done', '<=', end_datetime),
+        ('picking_type_code', '=', 'outgoing'),
+        ('state', '=', 'done'),
+        ('carrier_id.delivery_type', '=', 'ups_rest')
+    ])
+    if not picking_ids:
+        return
+
+    wizard = self.env['ups.report.wizard'].create({
+        'date_from': start_datetime,
+        'date_to': end_datetime,
+    })
+
+    # Prepare report data
+    data = {
+        'wizard_id': wizard.id,
+        'picking_ids': picking_ids.ids,
+        'date_from': start_datetime,
+        'date_to': end_datetime,
+        'carrier_id': picking_ids[0].carrier_id.name if picking_ids[0].carrier_id else '',
+    }
+
+    # Generate the PDF
+    report_ref = self.env.ref('bista_daily_shipment_report.action_ups_report_pdf')
+    pdf_content, _ = self.env['ir.actions.report']._render_qweb_pdf(
+        report_ref.report_name,
+        data=data
+    )
+
+    today_str = datetime.today().strftime('%d-%b-%Y')
+    filename = f"Daily UPS Shipment Report - {today_str}.pdf"
+    attachment_vals = {
+        'name': filename,
+        'type': 'binary',
+        'datas': base64.b64encode(pdf_content),
+        'res_model': 'stock.picking',
+        'mimetype': 'application/pdf',
+    }
+    if picking_ids:
+        attachment_vals['res_id'] = picking_ids[0].id
+
+    attachment = self.env['ir.attachment'].create(attachment_vals)
+    template = self.env.ref('bista_daily_shipment_report.email_template_send_daily_shipping_record')
+    partner_ids_str = self.env['ir.config_parameter'].sudo().get_param('stock.shipping_partner_ids')
+    email_subject = format_date(template.env, datetime.today(), date_format="dd-MMMM-yyyy")
+    partner_ids = self.env['res.partner'].browse(
+        list(map(int, partner_ids_str.split(',')))
+    ) if partner_ids_str else self.env['res.partner']
+
+    email_values = {
+        'recipient_ids': [(6, 0, partner_ids.ids)],
+        'attachment_ids': [(6, 0, [attachment.id])],
+        'subject': f'Daily Shipment Detail Reports - {email_subject}',
+    }
+    if template and picking_ids:
+        template.send_mail(picking_ids[0].id, email_values=email_values, force_send=True)
